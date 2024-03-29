@@ -24,7 +24,7 @@ function createCard(data) {
     card.classList.add("card");
     card.innerHTML = `
     <div data-id=${product.id}>
-        <div class="card__image"></div>
+        <div name="product-image" class="card__image"></div>
         <h2 class="card__title" title='${product.title}'>Email: ${product.email}</h2>
         <div class="card__fullName">
           <p class="card__desc" title='${product.description}'>${product.name.firstname}</p>
@@ -66,6 +66,7 @@ const setWish = async (id) => {
 
 wrapper.addEventListener("click", (e) => {
   let { name } = e.target;
+
   if (name === "product-image") {
     let id = e.target.closest("[data-id]").dataset.id;
     singleRoute(id);
@@ -83,3 +84,25 @@ navbarMenu.addEventListener("click", () => {
   navbarCollection.classList.toggle("show");
 });
 // ============= Navbar toggle END ================
+
+///////////////////////////////////////////////////
+
+let loadingCard = Array(10).fill("");
+
+let fragment = document.createDocumentFragment();
+loadingCard.forEach(() => {
+  const card = document.createElement("div");
+  card.classList.add("card__loading");
+  card.innerHTML = `
+  <div class="load__img skeleton"></div>
+  <h1 class="skeleton"></h1>
+  <p class="skeleton"></p>
+  <p class="skeleton"></p>
+  <div class="load__btns skeleton">
+    <div class="load__btn skeleton"></div>
+    <div class="load__btn_two skeleton"></div>
+  </div>
+    `;
+  fragment.appendChild(card);
+});
+loading.appendChild(fragment);

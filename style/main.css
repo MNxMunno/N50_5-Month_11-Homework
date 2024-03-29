@@ -138,3 +138,67 @@ header {
 #card__deslike:hover {
   background: rgb(253, 109, 109);
 }
+
+.loading {
+  padding-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.card__loading {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  background: #fcfcfc;
+}
+.card__loading .load__img {
+  width: 150px;
+  height: 150px;
+}
+.card__loading h1 {
+  width: 90%;
+  height: 16px;
+}
+.card__loading p {
+  width: 90%;
+  height: 16px;
+}
+.card__loading .load__btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.load__btns .load__btn {
+  width: 50px;
+  height: 50px;
+}
+.load__btns .load__btn_two {
+  width: 70px;
+  height: 50px;
+}
+
+.skeleton {
+  border-radius: 8px;
+  opacity: 0.7;
+  animation: skeleton_slide 1s linear infinite;
+}
+
+@keyframes skeleton_slide {
+  0% {
+    background: hsl(200, 20%, 80%);
+  }
+  100% {
+    background: hsl(202, 10%, 95%);
+  }
+}
+
+.admin {
+  padding-top: 100px;
+  text-align: center;
+}

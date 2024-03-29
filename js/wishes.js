@@ -35,6 +35,7 @@ const removeWishes = (id) => {
   let filterData = wishes.filter((el) => el.id !== +id);
   localStorage.setItem("wishes", JSON.stringify(filterData));
   createCard(filterData);
+
   window.location.reload();
 };
 
