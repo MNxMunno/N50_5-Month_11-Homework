@@ -1,6 +1,6 @@
 const wrapper = document.querySelector(".wrapper");
 let wishes = JSON.parse(localStorage.getItem("wishes"));
-console.log(wishes);
+// console.log(wishes);
 
 function createCard(data) {
   while (wrapper.firstChild) {
@@ -43,4 +43,12 @@ wrapper.addEventListener("click", (e) => {
     let id = e.target.closest("[data-id]").dataset.id;
     removeWishes(id);
   }
+});
+
+//////////////////////////////////////////////////////////////////
+const navbarCollection = document.querySelector(".navbar__collection");
+const navbarMenu = document.querySelector(".navbar__menu");
+
+navbarMenu.addEventListener("click", () => {
+  navbarCollection.classList.toggle("show");
 });

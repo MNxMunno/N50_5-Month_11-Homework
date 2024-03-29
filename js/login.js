@@ -1,4 +1,5 @@
-const API_URL = "https://fakestoreapi.com/users";
+const API_URL = "https://fakestoreapi.com/auth/login";
+const notFound = document.querySelector(".not__found");
 const form = document.querySelector(".form");
 const formUsername = document.querySelector(".form__username");
 const formPassword = document.querySelector(".form__password");
@@ -27,4 +28,12 @@ form.addEventListener("submit", async (e) => {
     .catch((err) => {
       errorText.style.display = "block";
     });
+});
+
+//////////////////////////////////////////////////////////////
+const navbarCollection = document.querySelector(".navbar__collection");
+const navbarMenu = document.querySelector(".navbar__menu");
+
+navbarMenu.addEventListener("click", () => {
+  navbarCollection.classList.toggle("show");
 });
