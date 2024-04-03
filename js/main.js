@@ -19,7 +19,7 @@ function createCard(data) {
     wrapper.firstChild.remove();
   }
   let fragment = document.createDocumentFragment();
-  data.forEach((product) => {
+  data.slice(0, 4).forEach((product) => {
     let card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
